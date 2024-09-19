@@ -2,12 +2,10 @@ package com.example.demo.entity;
 
 import java.time.LocalDate;
 
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,7 +18,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity // 필수
-@EntityListeners(AuditingEntityListener.class) 
 @Table(name = "tbl_Order")
 @Getter
 @Setter
@@ -37,8 +34,8 @@ public class Order {
 	@Column(length = 30, nullable = false)
 	String customerName;
 	
-	@Column(nullable = false)
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	@Column(nullable = false)
 	LocalDate orderDate;
 	
 	@Column(length = 100)

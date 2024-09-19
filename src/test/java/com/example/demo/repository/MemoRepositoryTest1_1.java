@@ -13,6 +13,8 @@ import com.example.demo.entity.Memo;
 @SpringBootTest
 public class MemoRepositoryTest1_1 {
 
+//	crud기능 확인
+	
 	@Autowired
 	MemoRepository memoRepository;
 	

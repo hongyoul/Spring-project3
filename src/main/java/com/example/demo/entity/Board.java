@@ -21,8 +21,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+
+// @EntityListeners는 JPA (Java Persistence API)에서 엔티티의 변경 사항을 자동으로 감지하고 관리하는 기능을 제공하는 어노테이션
+// 엔티티의 생성일자, 수정일자 등의 자동 기록을 관리할 수 있음
+// AuditingEntityListener는 JPA의 Auditing 기능을 제공하여 엔티티의 특정 필드를 자동으로 업데이트
+@EntityListeners(AuditingEntityListener.class) 
+
 @Entity // 필수
-@EntityListeners(AuditingEntityListener.class) // 엔티티의 변화를 감지하는 리스너 설정
 @Table(name = "tbl_board") // 선택
 @Getter
 @Setter
